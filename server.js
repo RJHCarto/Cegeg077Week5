@@ -21,3 +21,22 @@ console.log('test.html requested');
 // note that __dirname gives the path to the server.js file
 res.sendFile(__dirname + '/test.html');
 });
+
+app.get('/map2', function (req, res) {
+// run some server-side code
+var map2 = req.params.fileName;
+console.log(map2 + ' requested');
+// note that __dirname gives the path to the server.js file
+res.sendFile(__dirname + '/test2.html');
+});
+
+
+app.get('/map3', function (req, res) {
+// run some server-side code
+var map3 = req.params.fileName;
+console.log(map3 + ' requested');
+// note that __dirname gives the path to the server.js file
+res.sendFile(__dirname + '/test3.html');
+});
+
+app.use(express.static(__dirname));
